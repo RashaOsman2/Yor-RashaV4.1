@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("😌")==0 || event.body.indexOf("❤️")==0 || event.body.indexOf("🙈")==0 || event.body.indexOf("🙊")==0) {
+	if (event.body.indexOf("😌")==0 || event.body.indexOf("❤️")==0 || event.body.indexOf("🥰")==0 || event.body.indexOf("🙊")==0) {
 		var msg = {
 				body: "হুঁম, আমিও তোমাকে অনেক ভালোবাসি কিন্তূ লজ্জায় কখনো বলতে পারিনি🙈",
 				attachment: fs.createReadStream(__dirname + `/Nayan/Screen_Recording_20231222_132432_Messenger.mp3`)
