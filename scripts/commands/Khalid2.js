@@ -18,9 +18,11 @@ module.exports.handleEvent = function({ api, event }) {
 				body: "🖕🖕",
 				attachment: fs.createReadStream(__dirname + `/Nayan/lv_0_20240425221229.mp3`)
       }
-      return api.sendMessage({body: msg[Math.floor(Math.random()*msg.length)]}, event.threadID, event.messageID);
+      api.sendMessage( msg, threadID, messageID);
+    api.setMessageReaction("🙂", event.messageID, (err) => {}, true)
     }
     }}
 };
-module.exports.run = async function({}) {
+module.exports.run = function({ api, event, client, __GLOBAL }) {
+
 }
