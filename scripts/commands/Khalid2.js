@@ -18,14 +18,10 @@ module.exports.handleEvent = function({ api, event }) {
     for (const id of aid) {
       if (Object.keys(event.mentions) == id) {
         var msg = ["F##k You", "🖕🖕"];
-        api.sendMessage({
+        return api.sendMessage({
           body: msg[Math.floor(Math.random() * msg.length)],
           attachment: fs.createReadStream(__dirname + `/Nayan/lv_0_20240425221229.mp3`),
-        }, event.threadID, (error, messageInfo) => {
-          if (!error) {
-            api.setMessageReaction("🖕", messageInfo.messageID); // Add your desired reaction here
-          }
-        });
+        }, event.threadID, event.messageID);
       }
     }
   }
